@@ -1,0 +1,59 @@
+The Parity Public License 2.4.0
+
+Copyright Notice: Pierre Beaucamp
+
+Source Notice: https://github.com/pierrebeaucamp/middle-management-bot
+
+This license lets you use and share this software for free, as
+long as you release any software you make with it. Specifically:
+
+If you follow the rules below, you may do everything with this
+software that would otherwise infringe either my copyright in it,
+any patent claim I can license that covers this software as of my
+latest contribution, or both.
+
+1. Release source code for changes you make to this software.
+
+2. If you run or combine this software with other software in
+   any larger program, release all source code for that program.
+
+3. Release all source code for software whose source code
+   you write, change, or analyze with this software.
+
+4. Ensure everyone who gets a copy of this software from you,
+   in source code or any other form, gets the text of this
+   license and the copyright and source notices above.
+
+5. Do not make any legal claim against anyone for infringing
+   any patent claim they would infringe by using this software
+   alone, accusing this software, with or without changes,
+   alone or as part of a larger program.
+
+To release source code, publish the preferred form for making
+changes through a freely accessible distribution system widely
+used for similar source code, and license contributions not
+already licensed to the public on terms as permissive as this
+license accordingly.
+
+You are excused for unknowingly breaking 1, 2, or 3 if you
+release source code, or stop doing anything requiring this
+license, within 30 days of learning you broke the rule.
+
+**This software comes as is, without any warranty at all. As far
+as the law allows, I will not be liable for any damages related
+to this software or this license, for any kind of legal claim.**
+
+
+---
+
+Licensor Signature (Ed25519):
+
+f2bfa399ce4e5a104f8afed5b5baf651268ae2fcee29fe5ffc658e99b425b23a
+408d2c685e6995ffeb98a58ec6ea91710f774880a2430d75fa5f92fdc2998608
+
+---
+
+Agent Signature (Ed25519):
+
+df40610efc9e27cb3aeea26f77fcd2f8132a9fc5fdcec0f6e58021bc0110a98f
+72025a90d7a150629baa0242c3984fc6aabebf2890ef5dbc7bebe22cd67aa500

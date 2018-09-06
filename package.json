@@ -1,0 +1,35 @@
+{
+  "name": "middle-management-bot",
+  "version": "0.0.0",
+  "author": "Pierre Beaucamp",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "bugs": "https://github.com/pierrebeaucamp/middle-management-bot/issues",
+  "homepage": "https://github.com/pierrebeaucamp/middle-management-bot",
+  "repository": "https://github.com/pierrebeaucamp/middle-management-bot.git",
+  "dependencies": {
+    "fp-ts": "1.8.0",
+    "probot": "7.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "10.9.4",
+    "eslint-plugin-fp": "2.3.0",
+    "eslint-plugin-typescript": "0.12.0",
+    "nodemon": "1.18.4",
+    "standard": "12.0.1",
+    "typescript": "3.0.3",
+    "typescript-eslint-parser": "18.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "nodemon --exec \"npm start\"",
+    "start": "probot run ./lib/index.js",
+    "lint": "standard **/*.ts --fix"
+  },
+  "standard": {
+    "parser": "typescript-eslint-parser",
+    "plugins": [
+      "eslint-plugin-fp",
+      "typescript"
+    ]
+  }
+}

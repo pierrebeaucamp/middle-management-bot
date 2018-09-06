@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "licensezero": [
+    {
+      "agentSignature": "f071579dd500a634fe579db9bfaff72277f3bccdc1dc21b5e6985d5fbd6752cfa6072061093941db163f7d6ddc01b57dfd8ca27ca1ba13539d4732e6d0846609",
+      "license": {
+        "homepage": "https://github.com/pierrebeaucamp/middle-management-bot",
+        "jurisdiction": "CA-ON",
+        "name": "Pierre Beaucamp",
+        "projectID": "81dfef8b-125c-473e-b5d9-7a527f99acff",
+        "publicKey": "bdd349113b24394674fc5ae260a9c679f51fe689e6ef7be8754dd1e9b6b7ba5a",
+        "terms": "parity",
+        "version": "2.4.0"
+      },
+      "licensorSignature": "ceed602cb2b6eec41e46b683a826c61de4187c89084f29a240c8a11e0aa21ef10cd8bf6e00c09a067920edec651a582ba297b2c5ecfc6af7dc4a776937bf420b"
+    }
+  ]
+}
