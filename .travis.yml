@@ -4,7 +4,7 @@ script: nix-build -A package
 
 install: |
   if [ -d "$HOME/nix-cache" ]; then
-    rm -rf /nix/*
+    rm -rf /nix
     mv $HOME/nix-cache/* /nix
   fi
 
