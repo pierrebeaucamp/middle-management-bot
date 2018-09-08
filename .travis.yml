@@ -3,4 +3,6 @@ script: nix-build -A package
 sudo: true
 cache:
   directories:
-    - /nix/store/
+    - /nix
+before_cache:
+  - rm -rf /nix/var/log
