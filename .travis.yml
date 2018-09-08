@@ -1,8 +1,7 @@
-language: nix
-script: nix-build -A package
+language: minimal
 sudo: true
 cache:
   directories:
     - /nix
-before_cache:
-  - rm -rf /nix/var/log
+install: curl https://nixos.org/nix/install | sh
+script: nix-build -A package
