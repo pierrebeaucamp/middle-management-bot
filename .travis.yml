@@ -3,4 +3,4 @@ script: nix-build -A package
 sudo: true
 cache:
   directories:
-    - /nix/store
+    - /nix/
