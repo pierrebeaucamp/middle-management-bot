@@ -14,8 +14,10 @@ let
     inherit nodeEnv;
   };
 in
-  nodePackages // {
+  {
     package = nodePackages.package.override (attrs: {
       postInstall = "npm run build";
     });
+
+    shell = nodePackages.shell;
   }

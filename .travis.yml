@@ -1,4 +1,5 @@
 language: nix
+script: nix-build -A package
 cache:
   directories:
     - /nix/store
