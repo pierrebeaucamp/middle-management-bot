@@ -3,13 +3,13 @@ sudo: required
 script: nix-build -A package
 
 install: |
-  if [ -d "$HOME/nix-cache" ]; then
+  if [ -d "$HOME/nix-cache/store" ]; then
     sudo rm -rf /nix/*
     cp -a $HOME/nix-cache/* /nix
   fi
 
 before_cache: |
-  if [ ! -d "$HOME/nix-cache" ]; then
+  if [ ! -d "$HOME/nix-cache/store" ]; then
     cp -a /nix $HOME/nix-cache
   fi
 
