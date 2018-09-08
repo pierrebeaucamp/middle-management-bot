@@ -5,12 +5,12 @@ script: nix-build -A package
 install: |
   if [ "$(ls -A $HOME/nix-cache)" ]; then
     sudo rm -rf /nix/*
-    cp -av $HOME/nix-cache/* /nix
+    cp -a $HOME/nix-cache/* /nix
   fi
 
 before_cache: |
   if [ ! "$(ls -A $HOME/nix-cache)" ]; then
-    cp -a /nix $HOME/nix-cache
+    cp -a /nix/* $HOME/nix-cache
   fi
 
 cache:
