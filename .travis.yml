@@ -1,9 +1,9 @@
-language: minimal
+language: nix
 sudo: true
+install: if [ -d "$HOME/nix-cache" ]; then mv $HOME/nix-cache /nix fi
+script: nix-build -A package
+before_cache: if [ ! -d "$HOME/nix-cache" ]; then mv /nix $HOME/nix-cache fi
 cache:
   directories:
-    - /nix
-install:
-  - curl https://nixos.org/nix/install | sh
-  - source $HOME/.nix-profile/etc/profile.d/nix.sh
-script: nix-build -A package
+    - $HOME/nix-cache
+
