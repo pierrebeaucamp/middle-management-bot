@@ -1,8 +1,18 @@
 language: nix
 sudo: true
-install: if [ -d "$HOME/nix-cache" ]; then mv -f $HOME/nix-cache/* /nix; fi
 script: nix-build -A package
-before_cache: if [ ! -d "$HOME/nix-cache" ]; then cp -a /nix $HOME/nix-cache; fi
+
+install: |
+  if [ -d "$HOME/nix-cache" ]; then
+    rm -rf /nix/*
+    mv $HOME/nix-cache/* /nix
+  fi
+
+before_cache: |
+  if [ ! -d "$HOME/nix-cache" ]; then
+    cp -a /nix $HOME/nix-cache
+  fi
+
 cache:
   directories:
     - $HOME/nix-cache
