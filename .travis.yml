@@ -1,6 +1,6 @@
 language: nix
 sudo: required
-install: nix-env -i terraform
+before_script: nix-env -i terraform
 script: nix-build -A package
 
 install: |
