@@ -1,5 +1,3 @@
-import { Application } from "probot";
-
-export = (app: Application): number => {
+export = (): number => {
   return 0;
 };
