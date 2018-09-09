@@ -1,5 +1,6 @@
 language: nix
 sudo: required
+install: nix-env -i terraform
 script: nix-build -A package
 
 install: |
@@ -25,8 +26,7 @@ jobs:
       script: |
         nix-shell -A shell --run 'ln -s $NODE_PATH node_modules && npm run lint'
     - name: Terraform plan
-      script: |
-        nix-shell -A shell -p terraform --run "terraform plan -input=false"
+      script: nix-shell -A shell --run "terraform plan -input=false"
     - stage: Deploy
       name: Terraform apply
       if: branch = master
@@ -34,5 +34,4 @@ jobs:
         provider: script
         skip_cleanup: true
         script: |
-          nix-shell -A shell -p terraform \
-            --run "terraform apply -input=false -auto-approve"
+          nix-shell -A shell --run "terraform apply -input=false -auto-approve"
