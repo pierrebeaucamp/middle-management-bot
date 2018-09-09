@@ -13,6 +13,7 @@ module.exports = {
       "rulesDirectory": [ "node_modules/tslint/lib/rules" ].concat(
         require('typestrict/tslint').rulesDirectory
       ),
+      "configFile": "tsconfig.json"
     }]
   }
 }

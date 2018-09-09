@@ -1111,13 +1111,13 @@ let
         sha1 = "376d2a108710e981980bdc3875e3b9920da0489c";
       };
     };
-    "eslint-plugin-tslint-2.1.0" = {
+    "eslint-plugin-tslint-3.0.0" = {
       name = "eslint-plugin-tslint";
       packageName = "eslint-plugin-tslint";
-      version = "2.1.0";
+      version = "3.0.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/eslint-plugin-tslint/-/eslint-plugin-tslint-2.1.0.tgz";
-        sha512 = "0apzk3kqx6ancr933v32q7mhj612ci7r949llkwyphr5h84jxlkj3yva51g0fy5vb6422n9sghrd07jlq489dxhqvmd1nz603480ivn";
+        url = "https://registry.npmjs.org/eslint-plugin-tslint/-/eslint-plugin-tslint-3.0.0.tgz";
+        sha512 = "0f6bx3vy57zmm4xgag7pbh53rhr0yv9vsxkg4gccw8jhrp38inm7a0dxiqsamg6albmkmrll2n1yksg9lxvlj0sy9qknhhm1pph58x2";
       };
     };
     "eslint-plugin-typescript-0.12.0" = {
@@ -3901,6 +3901,15 @@ let
         sha512 = "2h3izi6ypfhcx3rs6m32br5x0b5140rmc2a4xjr6kq7xjxz43dlw01apgxiyqikihxnlmw6sp32bx4qq4cdfm3y96bwijix5kyc0zry";
       };
     };
+    "typescript-service-2.0.3" = {
+      name = "typescript-service";
+      packageName = "typescript-service";
+      version = "2.0.3";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/typescript-service/-/typescript-service-2.0.3.tgz";
+        sha512 = "1rhj5hfym495n7nw4rn21d3ryi7jsfb5zjhiqk0zmybiw653r81kszj1n3j7gpz3mmvc86bi3rjisbdmg7c3ikbrh0rbsvx3alnad0p";
+      };
+    };
     "typestrict-1.0.0" = {
       name = "typestrict";
       packageName = "typestrict";
@@ -4377,7 +4386,7 @@ let
       })
       sources."eslint-ast-utils-1.1.0"
       sources."eslint-plugin-fp-2.3.0"
-      sources."eslint-plugin-tslint-2.1.0"
+      sources."eslint-plugin-tslint-3.0.0"
       sources."eslint-plugin-typescript-0.12.0"
       sources."eslint-scope-4.0.0"
       sources."eslint-utils-1.3.1"
@@ -4787,6 +4796,7 @@ let
       sources."type-is-1.6.16"
       sources."typescript-3.0.3"
       sources."typescript-eslint-parser-18.0.0"
+      sources."typescript-service-2.0.3"
       sources."typestrict-1.0.0"
       (sources."uglify-js-2.8.29" // {
         dependencies = [
@@ -4844,6 +4854,7 @@ let
     ];
     buildInputs = globalBuildInputs;
     meta = {
+      description = "A bot to automate common busywork on Github";
       homepage = https://github.com/pierrebeaucamp/middle-management-bot;
       license = "SEE LICENSE IN LICENSE.txt";
     };
