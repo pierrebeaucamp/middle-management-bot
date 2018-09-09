@@ -26,7 +26,9 @@ jobs:
       script: |
         nix-shell -A shell --run 'ln -s $NODE_PATH node_modules && npm run lint'
     - name: Terraform plan
-      script: nix-shell -A shell --run "terraform plan -input=false"
+      script: |
+        nix-shell -A shell \
+        --run "terraform init -input=false && terraform plan -input=false"
     - stage: Deploy
       name: Terraform apply
       if: branch = master
@@ -34,4 +36,5 @@ jobs:
         provider: script
         skip_cleanup: true
         script: |
+          nix-shell -A shell --run "terraform init -input=false"
           nix-shell -A shell --run "terraform apply -input=false -auto-approve"
