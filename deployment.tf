@@ -7,7 +7,7 @@ terraform {
 data "archive_file" "source" {
   type = "zip"
   output_path = "${path.module}/archive.zip"
-  source_file = "${file('${path.module}/lib/index.js')}"
+  source_file = "${file("${path.module}/lib/index.js")}"
 }
 
 resource "google_storage_bucket" "bucket" {
