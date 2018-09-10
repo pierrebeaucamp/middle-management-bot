@@ -38,5 +38,5 @@ jobs:
         provider: script
         skip_cleanup: true
         script: |
-          nix-shell -A shell --run "terraform init -input=false" && \
-          nix-shell -A shell --run "terraform apply -input=false -auto-approve"
+          terraform init -input=false" \
+          && terraform apply -input=false -auto-approve"
