@@ -1,3 +1,11 @@
+provider "archive" {
+  version = "~> 1.1"
+}
+
+provider "google" {
+  version = "~> 1.17"
+}
+
 terraform {
   backend "gcs" {
     bucket = "middle-management-bot-terraform-state"
