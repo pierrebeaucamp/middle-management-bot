@@ -4,6 +4,9 @@ provider "archive" {
 
 provider "google" {
   version = "~> 1.17"
+  project = "middle-management-bot"
+  region = "us-central1"
+  credentials = "gcs-account.json"
 }
 
 terraform {
