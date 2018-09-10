@@ -38,5 +38,5 @@ jobs:
         provider: script
         skip_cleanup: true
         script: |
-          terraform init -input=false" \
-          && terraform apply -input=false -auto-approve"
+          terraform init -input=false" && terraform apply -input=false \
+            -auto-approve"
