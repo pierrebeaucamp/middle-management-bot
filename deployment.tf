@@ -1,19 +1,18 @@
 terraform {
   backend "gcs" {
     bucket = "middle-management-bot-terraform-state"
+    project = "middle-management-bot"
+    region = "us-central1"
+    credentials = "${file("gcs-account.json")}"
   }
-}
-
-provider "google" {
-  project = "middle-management-bot"
-  region = "us-central1"
-  credentials = "${file("gcs-account.json")}"
 }
 
 data "archive_file" "source" {
   type = "zip"
   output_path = "${path.module}/archive.zip"
-  source_file = "${file("${path.module}/lib/index.js")}"
+  source_file = "${file(
+    "${path.module}/result/lib/node_modules/middle-management-bot/lib/index.js"
+  )}"
 }
 
 resource "google_storage_bucket" "bucket" {
