@@ -1,13 +1,19 @@
 language: nix
 sudo: required
-before_script: nix-env -i terraform
-script: nix-build -A package
+
+before_install: |
+  openssl aes-256-cbc \
+    -K $encrypted_e6b209e4eeaf_key -iv $encrypted_e6b209e4eeaf_iv \
+    -in gcs-account.json.enc -out gcs-account.json -d
 
 install: |
   if [ "$(ls -A $HOME/nix-cache)" ]; then
     sudo rm -rf /nix/*
     cp -a $HOME/nix-cache/* /nix
   fi
+
+before_script: nix-env -i terraform
+script: nix-build -A package
 
 before_cache: |
   if [ ! "$(ls -A $HOME/nix-cache)" ]; then

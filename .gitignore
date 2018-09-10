@@ -116,3 +116,6 @@ lib/
 result
 result-2
 result-3
+
+# GCE account file
+gcs-account.json

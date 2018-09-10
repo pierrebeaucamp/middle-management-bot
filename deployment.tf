@@ -4,6 +4,12 @@ terraform {
   }
 }
 
+provider "google" {
+  project = "middle-management-bot"
+  region = "us-central1"
+  credentials = "${file("gcs-account.json")}"
+}
+
 data "archive_file" "source" {
   type = "zip"
   output_path = "${path.module}/archive.zip"
