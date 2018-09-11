@@ -119,3 +119,6 @@ result-3
 
 # GCE account file
 gcs-account.json
+
+# Terraform output
+archive.zip

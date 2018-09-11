@@ -18,6 +18,10 @@ terraform {
   }
 }
 
+locals {
+  source_hash = "${base64encode(data.archive_file.source.output_md5)}"
+}
+
 data "archive_file" "source" {
   type = "zip"
   output_path = "${path.module}/archive.zip"
@@ -29,7 +33,7 @@ resource "google_storage_bucket" "bucket" {
 }
 
 resource "google_storage_bucket_object" "archive" {
-  name = "source.zip"
+  name = "source-${lower(replace(local.source_hash,"=",""))}.zip"
   bucket = "${google_storage_bucket.bucket.name}"
   source = "${path.module}/archive.zip"
   depends_on = [ "data.archive_file.source" ]
