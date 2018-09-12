@@ -1,6 +1,6 @@
 {
   "name": "middle-management-bot",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "description": "A bot to automate common busywork on Github",
   "author": "Pierre Beaucamp",
   "license": "SEE LICENSE IN LICENSE.txt",
@@ -8,10 +8,12 @@
   "homepage": "https://github.com/pierrebeaucamp/middle-management-bot",
   "repository": "https://github.com/pierrebeaucamp/middle-management-bot.git",
   "dependencies": {
+    "express-result-types": "0.0.4",
     "fp-ts": "1.8.0",
     "probot": "7.1.0"
   },
   "devDependencies": {
+    "@types/express": "4.16.0",
     "@types/node": "10.9.4",
     "eslint": "5.5.0",
     "eslint-plugin-fp": "2.3.0",
@@ -26,7 +28,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev": "nodemon --exec \"npm start\"",
-    "start": "npm run build && probot run ./lib/index.js",
+    "start": "npm run build && probot run ./lib/app.js",
     "lint": "eslint src --ext \"ts\" --fix"
   }
 }

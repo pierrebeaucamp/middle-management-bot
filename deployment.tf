@@ -25,7 +25,7 @@ locals {
 data "archive_file" "source" {
   type = "zip"
   output_path = "${path.module}/archive.zip"
-  source_file = "result/lib/node_modules/middle-management-bot/lib/index.js"
+  source_file = "result/lib/node_modules/middle-management-bot/lib/handler.js"
 }
 
 resource "google_storage_bucket" "bucket" {
@@ -46,5 +46,5 @@ resource "google_cloudfunctions_function" "function" {
   source_archive_bucket = "${google_storage_bucket.bucket.name}"
   source_archive_object = "${google_storage_bucket_object.archive.name}"
   trigger_http = true
-  entry_point = "main"
+  entry_point = "handler"
 }
