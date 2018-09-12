@@ -1,5 +1,2 @@
-import * as app from "./app";
-import * as handler from "./handler";
-
-export handler
-export app
+export { default as app } from "./app";
+export { default as handler } from "./handler";
