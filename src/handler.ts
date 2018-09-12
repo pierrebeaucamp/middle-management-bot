@@ -4,7 +4,7 @@ import { wrapAsync } from "express-result-types/target/wrap";
 import { Task } from "fp-ts/lib/Task";
 import { Application } from "probot";
 
-export const handler = wrapAsync((request: Request): Promise<Result> => {
+export default wrapAsync((request: Request): Promise<Result> => {
   const app = new Application();
 
   const eventReceived: Task<[void, void, void]> = new Task(() => app.receive({

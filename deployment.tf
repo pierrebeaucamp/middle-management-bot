@@ -25,7 +25,8 @@ locals {
 data "archive_file" "source" {
   type = "zip"
   output_path = "${path.module}/archive.zip"
-  source_file = "result/lib/node_modules/middle-management-bot/lib/handler.js"
+  source_dir = "result/lib/node_modules/middle-management-bot/lib"
+  source_file = "result/lib/node_modules/middle-management-bot/package.json"
 }
 
 resource "google_storage_bucket" "bucket" {
