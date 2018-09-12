@@ -26,7 +26,13 @@ data "archive_file" "source" {
   type = "zip"
   output_path = "${path.module}/archive.zip"
   source_dir = "result/lib/node_modules/middle-management-bot/lib"
-  source_file = "result/lib/node_modules/middle-management-bot/package.json"
+  depends_on = [ "null_resource.package_json" ]
+}
+
+resource "null_resource" "package_json" {
+  provisioner "local-exec" {
+    command = "cp package.json lib/package.json"
+  }
 }
 
 resource "google_storage_bucket" "bucket" {
