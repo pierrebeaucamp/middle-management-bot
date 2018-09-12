@@ -16,7 +16,10 @@ let
 in
   {
     package = nodePackages.package.override (attrs: {
-      postInstall = "npm run build";
+      postInstall = ''
+        npm run build
+        cp package.json lib/package.json
+      '';
     });
 
     shell = nodePackages.shell;
