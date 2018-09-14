@@ -1,6 +1,6 @@
 {
   "name": "middle-management-bot",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A bot to automate common busywork on Github",
   "author": "Pierre Beaucamp",
   "license": "SEE LICENSE IN LICENSE.txt",
@@ -20,6 +20,7 @@
     "eslint-plugin-tslint": "3.0.0",
     "eslint-plugin-typescript": "0.12.0",
     "nodemon": "1.18.4",
+    "smee-client": "1.0.2",
     "tslint": "5.11.0",
     "typescript": "3.0.3",
     "typescript-eslint-parser": "18.0.0",
@@ -27,7 +28,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "dev": "nodemon --exec \"npm start\"",
+    "dev": "nodemon -e ts -w ./src -x \"npm start\"",
     "start": "npm run build && probot run ./lib/app.js",
     "lint": "eslint src --ext \"ts\" --fix"
   }

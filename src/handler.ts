@@ -1,18 +1,21 @@
 import { Request } from "express";
 import { Ok, Result } from "express-result-types/target/result";
 import { wrapAsync } from "express-result-types/target/wrap";
-import { Task } from "fp-ts/lib/Task";
+import { IO } from "fp-ts/lib/IO";
+import { fromIO, Task } from "fp-ts/lib/Task";
 import { Application } from "probot";
+import { app as init } from ".";
 
 export default wrapAsync((request: Request): Promise<Result> => {
   const app = new Application();
-
-  const eventReceived: Task<[void, void, void]> = new Task(() => app.receive({
+  const initialize = new IO(() => init(app));
+  const handleEvents: Task<[void, void, void]> = new Task(() => app.receive({
     name: request.get("X-GitHub-Event"),
     payload: request.body,
   }));
 
-  const succeed = () => Ok;
-
-  return eventReceived.map(succeed).run();
+  return fromIO(initialize)
+    .chain(() => handleEvents)
+    .map(() => Ok)
+    .run();
 });
