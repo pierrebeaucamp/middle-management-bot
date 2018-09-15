@@ -9,7 +9,7 @@ import { app as init } from ".";
 export default wrapAsync((request: Request): Promise<Result> => {
   const app = new Application();
   const initialize = new IO(() => init(app));
-  const handleEvents: Task<[void, void, void]> = new Task(() => app.receive({
+  const handleEvents = new Task(() => app.receive({
     name: request.get("X-GitHub-Event"),
     payload: request.body,
   }));
