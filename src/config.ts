@@ -25,20 +25,13 @@ export function getConfig(context: Context): TaskEither<Error, IConfig> {
   });
 
   const toConfig = ((content: {}): TaskEither<Error, IConfig> => {
-    // Poor man's runtime check
     if ("add_issues_to_column" in content) {
       return right(task.of(content as IConfig));
+    } else {
+      return left(task.of(new Error("Config file has missing values")));
     }
-
-    return left(task.of(new Error("Config file has missing values")));
   });
 
-  // Once again, my life is put in jeopardy because some people can't provide
-  // proper type definitions.
-  const read: (
-    value: any,
-    callback: (err: Error | null | undefined, result: AnyResponse) => void,
-  ) => void = (context.github as any).repos.getContent;
-
-  return taskify(read)(params).chain(toYaml).chain(toConfig);
+  return taskify(context.github.repos.getContent)(params)
+    .chain(toYaml).chain(toConfig)
 }

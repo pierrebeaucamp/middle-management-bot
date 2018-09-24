@@ -33,8 +33,8 @@ jobs:
     - stage: Deploy
       name: Terraform
       if: branch = master
+      before_script: nix-env -i terraform
       script: nix-build -A package
-      after_script: nix-env -i terraform
       before_deploy: terraform init -input=false
       deploy:
         provider: script

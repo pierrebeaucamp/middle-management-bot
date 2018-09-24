@@ -1,4 +1,3 @@
-import { AnyResponse } from "@octokit/rest";
 import { right } from "fp-ts/lib/Either";
 import { identity } from "fp-ts/lib/function";
 import { Task } from "fp-ts/lib/Task";
@@ -18,14 +17,7 @@ function handle(context: Context): TaskEither<Error, void> {
       content_type: "Issue",
     };
 
-    // Once again, my life is put in jeopardy because some people can't provide
-    // proper type definitions.
-    const createProjectCard: (
-      value: any,
-      callback: (err: Error | null | undefined, result: AnyResponse) => void,
-    ) => void = (context.github as any).projects.createProjectCard;
-
-    return taskify(createProjectCard)(params);
+    return taskify(context.github.projects.createProjectCard)(params);
   };
 
   return getConfig(context).chain(createCard).map(toVoid);
