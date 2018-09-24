@@ -1,8 +1,7 @@
 # Middle Managment Bot
 
-[![Build Status](https://travis-ci.com/pierrebeaucamp/middle-management-bot.svg?branch=master)](https://travis-ci.com/pierrebeaucamp/middle-management-bot)
-
 [![Gauge Badge](https://gauge.org/Gauge_Badge.svg)](https://gauge.org)
+[![Build Status](https://travis-ci.com/pierrebeaucamp/middle-management-bot.svg?branch=master)](https://travis-ci.com/pierrebeaucamp/middle-management-bot)
 
 This is a work-in-progress GitHub Probot application to automate some common
 busywork. I'm primarily writing this for personal use, but ideas and
