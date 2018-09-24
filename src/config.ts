@@ -27,11 +27,11 @@ export function getConfig(context: Context): TaskEither<Error, IConfig> {
   const toConfig = ((content: {}): TaskEither<Error, IConfig> => {
     if ("add_issues_to_column" in content) {
       return right(task.of(content as IConfig));
-    } else {
-      return left(task.of(new Error("Config file has missing values")));
     }
+
+    return left(task.of(new Error("Config file has missing values")));
   });
 
   return taskify(context.github.repos.getContent)(params)
-    .chain(toYaml).chain(toConfig)
+    .chain(toYaml).chain(toConfig);
 }
