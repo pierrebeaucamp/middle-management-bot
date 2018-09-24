@@ -1,0 +1,11 @@
+{
+  "repository": {
+    "name": "playground",
+    "owner": {
+        "login": "pierrebeaucamp"
+    }
+  },
+  "installation": {
+    "id": 1234
+  }
+}

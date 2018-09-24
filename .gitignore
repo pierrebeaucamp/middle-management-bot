@@ -122,3 +122,7 @@ gcs-account.json
 
 # Terraform output
 archive.zip
+
+# Gauge
+.gauge
+reports
