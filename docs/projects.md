@@ -15,8 +15,7 @@ add_issues_to_column: 1234567
 
 You can infer the column ID by visiting your project board, clicking on the
 little '…' button of a column and select "Copy column URL". The URL will be of
-type
-"https://github.com/orgs/<organization\>/projects/<project\>#column-<column\>"
+type "github.com/orgs/<organization\>/projects/<project\>#column-<column\>"
 
 
 ## Automatically assign new issues to the project board
