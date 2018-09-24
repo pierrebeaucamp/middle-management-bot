@@ -1,11 +1,16 @@
 # Middle Managment Bot
 
 [![Gauge Badge](https://gauge.org/Gauge_Badge.svg)](https://gauge.org)
-[![Build Status](https://travis-ci.com/pierrebeaucamp/middle-management-bot.svg?branch=master)](https://travis-ci.com/pierrebeaucamp/middle-management-bot)
+[![Build Status](
+https://travis-ci.com/pierrebeaucamp/middle-management-bot.svg?branch=master)](
+https://travis-ci.com/pierrebeaucamp/middle-management-bot)
 
 This is a work-in-progress GitHub Probot application to automate some common
 busywork. I'm primarily writing this for personal use, but ideas and
-contributions are welcome.
+contributions are welcome. Documentation of current features can be found in
+the
+[docs](https://github.com/pierrebeaucamp/middle-management-bot/tree/master/docs)
+subfolder.
 
 The project is released as free and open-source software under the Parity Public
 License, as defined in LICENSE.txt. Private licenses and a relicensing option

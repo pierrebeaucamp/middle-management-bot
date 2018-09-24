@@ -5,7 +5,7 @@
 }:
 
 let
-  globalBuildInputs = [ pkgs.gauge pkgs.terraform ];
+  globalBuildInputs = [ pkgs.gauge ];
   nodeEnv = import ./node-env.nix {
     inherit (pkgs) stdenv python2 utillinux runCommand writeTextFile;
     inherit nodejs;

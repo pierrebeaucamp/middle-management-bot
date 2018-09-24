@@ -10,13 +10,13 @@ configuration file under `.github/middle-management-bot.yaml` with the following
 content:
 
 ```yaml
-add_issues_to_column: column-1234567
+add_issues_to_column: 1234567
 ```
 
 You can infer the column ID by visiting your project board, clicking on the
 little '…' button of a column and select "Copy column URL". The URL will be of
 type
-"https://github.com/orgs/<organization>/projects/<project-number>#<column-id>"
+"https://github.com/orgs/<organization\>/projects/<project\>#column-<column\>"
 
 
 ## Automatically assign new issues to the project board
